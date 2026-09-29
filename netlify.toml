@@ -1,0 +1,19 @@
+# Netlify configuration.
+#
+# The deploy that actually ships is a prebuilt directory:
+#
+#   flutter build web --release
+#   netlify deploy --prod --dir=build/web
+#
+# `publish` points at that directory. The SPA rewrite and cache rules live in
+# web/_redirects and web/_headers instead of here, because Flutter copies the
+# contents of web/ into build/web/, and Netlify applies those two files from
+# the publish root even on a manual --dir deploy. Defining them here as well
+# would leave two sources of truth that could drift apart.
+
+[build]
+  publish = "build/web"
+
+# Left unset on purpose: Netlify's build image does not ship the Flutter SDK,
+# so an automated Git-connected build would fail. Build locally and upload.
+# command = "flutter build web --release"

@@ -1,0 +1,15 @@
+# Netlify SPA fallback.
+#
+# Flutter web is a single-page app: every route is resolved client-side by the
+# router inside index.html. Without this, any URL other than "/" — or any
+# refresh on a deep link — 404s.
+#
+# Real files always win over this rule, so assets under /assets/, /canvaskit/
+# and the icons still load normally.
+#
+# One rule per line, and the rule must not be wrapped: this file is not
+# whitespace-insensitive the way netlify.toml is. Splitting `/*` and its
+# destination across two lines parses as a rule with no destination, which the
+# CLI reports as a syntax error and Netlify then ignores — silently, leaving
+# every deep link 404ing. deploy_netlify.sh checks the shape for this reason.
+/*    /index.html   200

@@ -1,0 +1,13 @@
+# Netlify response headers.
+#
+# The entrypoint and the service worker must never be cached. A Flutter web
+# build swaps out its hashed assets on every deploy; if the browser serves a
+# cached index.html, it boots a stale app and requests bundles that no longer
+# exist. Everything else is left to Netlify's default ETag handling, which is
+# correct because the remaining files are either content-hashed or small.
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/flutter_service_worker.js
+  Cache-Control: no-cache, no-store, must-revalidate

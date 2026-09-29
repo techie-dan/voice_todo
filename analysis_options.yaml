@@ -1,0 +1,63 @@
+# Lint rules are listed explicitly rather than inherited from `flutter_lints`.
+#
+# They come from the analyzer itself, so the project has no lint dependency to
+# keep in sync and `flutter pub get && flutter run` remains the whole setup.
+# If you want the standard Flutter set instead, add `flutter_lints` as a dev
+# dependency and replace this file with `include: package:flutter_lints/flutter.yaml`.
+
+analyzer:
+  language:
+    # An implicit downcast is usually a bug. Make the analyzer say so.
+    strict-casts: true
+  exclude:
+    - build/**
+
+linter:
+  rules:
+    - avoid_empty_else
+    - avoid_print
+    - avoid_relative_lib_imports
+    - avoid_types_as_parameter_names
+    - await_only_futures
+    - camel_case_extensions
+    - camel_case_types
+    - cancel_subscriptions
+    - close_sinks
+    - collection_methods_unrelated_type
+    - control_flow_in_finally
+    - curly_braces_in_flow_control_structures
+    - depend_on_referenced_packages
+    - empty_catches
+    - empty_statements
+    - exhaustive_cases
+    - hash_and_equals
+    - implementation_imports
+    - library_names
+    - library_prefixes
+    - no_duplicate_case_values
+    - non_constant_identifier_names
+    - null_check_on_nullable_type_parameter
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_final_fields
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_single_quotes
+    - prefer_typing_uninitialized_variables
+    - provide_deprecation_message
+    - recursive_getters
+    - sized_box_for_whitespace
+    - slash_for_doc_comments
+    - sort_child_properties_last
+    - type_init_formals
+    - unawaited_futures
+    - unnecessary_brace_in_string_interps
+    - unnecessary_const
+    - unnecessary_new
+    - unnecessary_this
+    - unrelated_type_equality_checks
+    - use_build_context_synchronously
+    - use_key_in_widget_constructors
+    - use_rethrow_when_possible
+    - valid_regexps
+    - void_checks
