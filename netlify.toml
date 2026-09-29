@@ -10,9 +10,9 @@
 # contents of web/ into build/web/, and Netlify applies those two files from
 # the publish root even on a manual --dir deploy. Defining them here as well
 # would leave two sources of truth that could drift apart.
-
 [build]
   publish = "build/web"
+  command = "git clone https://github.com/flutter/flutter.git -b stable --depth 1 && ./flutter/bin/flutter config --enable-web && ./flutter/bin/flutter build web --release"
 
 # Left unset on purpose: Netlify's build image does not ship the Flutter SDK,
 # so an automated Git-connected build would fail. Build locally and upload.
